@@ -1,5 +1,5 @@
 {
-	urlProxy: "/~proxy",
+	urlProxy: "index.php",
 	urlFramework: "js-i2b2/",
 	startZoomed: true,
 	//-------------------------------------------------------------------------------------------
