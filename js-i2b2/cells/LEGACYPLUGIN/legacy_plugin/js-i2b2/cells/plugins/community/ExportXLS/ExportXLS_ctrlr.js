@@ -324,6 +324,11 @@ i2b2.ExportXLS.ConceptDropped = function(sdxData)
 		
 		if(!flagConcept)
 		{		
+			var cdetails = i2b2.ONT.ajax.GetTermInfo("CRC:QueryTool", {concept_key_value:sdxData.origData.key, ont_synonym_records: true, ont_hidden_records: true} );
+                        var c = i2b2.h.XPath(cdetails.refXML, 'descendant::concept');
+                        if (c.length > 0) {
+                              sdxData.origData.xmlOrig = c[0];                                       
+                        }
 			i2b2.ExportXLS.model.concepts.push(sdxData);			
 			i2b2.ExportXLS.ConceptsRender();  				// Sort and display the concept list			
 			i2b2.ExportXLS.model.dirtyResultsData = true;	// Optimization to prevent requerying the hive for new results if the input dataset has not changed
@@ -335,6 +340,11 @@ i2b2.ExportXLS.ConceptDropped = function(sdxData)
 	}
 	else 
 	{
+		var cdetails = i2b2.ONT.ajax.GetTermInfo("CRC:QueryTool", {concept_key_value:sdxData.origData.key, ont_synonym_records: true, ont_hidden_records: true} );
+                var c = i2b2.h.XPath(cdetails.refXML, 'descendant::concept');
+                if (c.length > 0) {
+                    sdxData.origData.xmlOrig = c[0];                                       
+                }		
 		i2b2.ExportXLS.model.concepts.push(sdxData);		
 		i2b2.ExportXLS.ConceptsRender(); 				// Sort and display the concept list		
 		i2b2.ExportXLS.model.dirtyResultsData = true; 	// Optimization to prevent requerying the hive for new results if the input dataset has not changed
