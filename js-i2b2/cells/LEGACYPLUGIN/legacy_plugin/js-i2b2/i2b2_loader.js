@@ -34,9 +34,16 @@ i2b2.hive.tempCellsList = [
 		{ code: "ONT", forceLoading: true},
 		{ code: "CRC", forceLoading: true},
 		{ code: "WORK", forceLoading: true},
+                {code: "ONTSTORE"},
 		{ code:	"PLUGINMGR",
 		   forceLoading: true,
 		   forceConfigMsg: { params: [] }
+		},
+                { code:	"OntologyStore",
+		   forceLoading: true,
+		   forceConfigMsg: { params: [] },
+		   roles: ["MANAGER"],
+		   forceDir: "cells/plugins/standard"
 		},
 		{ code:	"Dem1Set",
 		   forceLoading: true,
