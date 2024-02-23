@@ -404,7 +404,7 @@ i2b2.OntologyStore.execute = function () {
                                 // check to see if refresh is required    
                                 for (let i = 0; i < data.length; i++) {
                                     if ((data[i].actionType === 'Install') || (data[i].actionType === 'Enable') || (data[i].actionType === 'Disable')) {
-//                                        i2b2.ONT.view.nav.doRefreshAll(); // not implemented for legacy plugin
+                                        parent.i2b2.ONT.view.nav.doRefreshAll();
                                         break;
                                     }
                                 }
